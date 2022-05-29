@@ -1,67 +1,35 @@
-# Bob = Student(name="Bob", age=26, tracks=["FE","BE"],score=20.90)
-
-# Expected methods
-# Bob.change_name("Peter")
-# Bob.change_age(34)
-# Bob.add_track("UI/UX")
-# Bob.get_score()
-
-
 class Student:
-    
     # [assignment] Skeleton class. Add your code here
-    def __init__(self, name, age, tracks=[], score=[]):
+    # I have an __init__ function that specifies the constructor of the class
+    def __init__(self, name, age, tracks, score):
         self.name = name
         self.age = age
         self.tracks = tracks
         self.score = score
- 
+
+    # A function to change the name of the student 
     def change_name(self, new_name):
-        return self.name.append(new_name)
- 
+        self.name = new_name
+        return(Bob.name)
+
+    # A function to change the age of a student
     def change_age(self, new_age):
-        return self.age.append(new_age)
-        if type(new_age) is int:
-            self.age = int(new_age)
-        else:
-            self.age = 0
- 
-    def add_track(self, new_track):
-        return self.tracks.append(new_track)
- 
-    def get_score(self, new_score):
-        return self.score.append(new_score)
- 
-    def dis(self):
-        return (self.name)
-        return (self.age)
-        return (self.track)
-        return (self.score)
-        
-    
-Details = Student()
-choice=1
-while choice!=0:
-    print("0. Exit")
-    print("1. Add")
-    print("2. Delete")
-    print("3. Display")
-    choice=int(input("Enter choice: "))
-    if choice==1:
-        n=int(input("Enter name to append: "))
-        Details.change_name(new_name)
-        print("Name: ",Details.dis())
- 
-    elif choice==2:
-        n=int(input("Enter name to remove: "))
-       
-        print("List: ",Details.dis())
- 
-    elif choice==3:
-        print("List: ",Details.dis())
-    elif choice==0:
-        print("Exiting!")
-    else:
-        print("Invalid choice!!")
- 
-print()
+        self.age = new_age
+        return(Bob.age)
+
+    # A function to add track to an existing list of tracks 
+    def add_track(self, added_track):
+        self.tracks.append(added_track)
+        return(Bob.tracks)
+
+    # A function to get the score of a student
+    def get_score(self):
+        return(self.score)
+
+# Here I am creating an Instance of the class together with the properties 
+Bob = Student("Bob", 26, ["FE", "BE"], 20.90)
+# Expected methods
+print(Bob.change_name("Peter"))
+print(Bob.change_age(34))
+print(Bob.add_track("UI/UX"))
+print(Bob.get_score())
